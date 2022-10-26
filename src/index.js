@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useTrail, a } from "@react-spring/web";
 
+export const AChild = a(styled.div`
+  width: 100%;
+  height: 100%;
+`);
+
 export const Trail = ({
   from = { opacity: 0 },
   to = { opacity: 1, x: 0, y: 0 },
@@ -18,10 +23,6 @@ export const Trail = ({
     reset: true,
     delay: 0,
   });
-  const AChild = a(styled.div`
-    width: 100%;
-    height: 100%;
-  `);
   return trail.map((style, index) => (
     <AChild key={index} style={style}>
       {items[index]}
